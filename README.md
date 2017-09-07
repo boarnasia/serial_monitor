@@ -11,7 +11,6 @@ Get started
 ```bash
 $ pip install git+https://github.com/boarnasia/serial_monitor
 $ python -m serial_monitor -p /dev/serial0 -b 9600
-$ python -m serial_monitor -p /dev/ttyS0
 Message 1
 Message 2
 Message 3
