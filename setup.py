@@ -1,27 +1,3 @@
-"""
-Serial monitor
-==============
-
-Serial monitor is a simple serial port monitor for linux.
-
-Get started
------------
-
-```bash
-$ pip install git+https://github.com/boarnasia/serial_monitor
-$ python -m serial_monitor -p /dev/serial0 -b 9600
-Message 1
-Message 2
-Message 3
-Message 4
-Message 5
-^C
-
-====
-Stop, because of keyboard interruption.
-```
-"""
-
 import re
 import ast
 from setuptools import setup
@@ -32,14 +8,30 @@ with open('serial_monitor/__init__.py', 'rb') as f:
     version = str(ast.literal_eval(_version_re.search(
         f.read().decode('utf-8')).group(1)))
 
+with open('readme.md', 'r') as f:
+    long_description = f.read()
+
 setup(
     name    = "Serial monitor",
     version = version,
     url = 'https://github.com/boarnasia/serial_monitor/',
     description = 'Simple serial port monitor for linux',
-    long_description = __doc__,
+    long_description = long_description,
     install_requires = [
         'pyserial',
+    ],
+    extras_require={
+        'dev': [
+            'pytest',
+            'pytest-pep8',
+            'pytest-cov'
+        ]
+    },
+    classifiers=[
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 3',
+        'Topic :: Software Development :: Libraries :: Python Modules'
     ],
 )
 

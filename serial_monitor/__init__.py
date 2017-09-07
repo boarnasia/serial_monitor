@@ -5,6 +5,7 @@ from argparse import ArgumentParser as BaseParser
 
 __version__ = "0.0.1"
 
+
 class SerialMonitor:
     def __init__(self):
         self.fin = None
@@ -19,7 +20,9 @@ class SerialMonitor:
     def open(self):
         self.fin = serial.Serial(self.args.port.name, self.args.baudrate,
                                  timeout=self.args.timeout)
-        self.fin.readline() # Abandon first line, because it will contain faulty data.
+
+        # Abandon first line, because it will contain faulty data.
+        self.fin.readline()
 
     def loop(self):
         try:
@@ -41,7 +44,7 @@ class SerialMonitor:
             print("")
 
     def close(self):
-        if self.fin != None:
+        if self.fin is not None:
             self.fin.close()
 
         self.fin = None
@@ -55,12 +58,13 @@ class ArgumentParser(BaseParser):
         super(ArgumentParser, self).__init__(
             description="Serial port monitor."
         )
-        self.add_argument('-v', '--version', action="version", help="Show version.",
-                          version="%(prog)s {}".format( __version__))
-        self.add_argument('-p', '--port', action="store", type=open, default='/dev/serial0',
+        self.add_argument('-v', '--version', action="version",
+                          help="Show version.",
+                          version="%(prog)s {}".format(__version__))
+        self.add_argument('-p', '--port', action="store", type=open,
+                          default='/dev/serial0',
                           help="name of the device port")
-        self.add_argument('-b', '--baudrate', action="store", type=int, default=9600,
-                          help="baud rate")
-        self.add_argument('-t', '--timeout', action="store", type=int, default=10,
-                          help="timeout")
-
+        self.add_argument('-b', '--baudrate', action="store", type=int,
+                          default=9600, help="baud rate")
+        self.add_argument('-t', '--timeout', action="store", type=int,
+                          default=10, help="timeout")

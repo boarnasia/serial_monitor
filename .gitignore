@@ -1,6 +1,5 @@
 __pycache__
 *.egg-info
 *.pyc
-.fuse_*
-/etc/certificates/*
-/.env
+.cache
+.coverage
