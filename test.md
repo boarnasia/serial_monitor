@@ -1,8 +1,8 @@
-![Alt text](https://g.gravizo.com/source/custom_test01?https%3A%2F%2Fraw.githubusercontent.com%2Fboarnasia%2Fserial_monitor%2Fmd_uml_test%2Ftest.md)
+![Alt text](https://g.gravizo.com/source/custom_mark01?https%3A%2F%2Fraw.githubusercontent.com%2Fboarnasia%2Fserial_monitor%2Fmd_uml_test%2Ftest.md)
 
 <details>
 <summary></summary>
-custom_test01
+custom_mark01
 @startuml;
 actor User;
 participant "First Class" as A;
@@ -21,5 +21,5 @@ deactivate B;
 A -> User: Done;
 deactivate A;
 @enduml
-custom_mark13
+custom_mark01
 </details>
