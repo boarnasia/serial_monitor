@@ -1,4 +1,4 @@
-![Alt text](https://g.gravizo.com/source/custom_test01?https://raw.githubusercontent.com/boarnasia/serial_monitor/md_uml_test/test.md)
+![Alt text](https://g.gravizo.com/source/custom_test01?https%3A%2F%2Fraw.githubusercontent.com%2Fboarnasia%2Fserial_monitor%2Fmd_uml_test%2Ftest.md)
 
 <details>
 <summary></summary>
